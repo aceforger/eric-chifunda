@@ -1,6 +1,11 @@
+import { useState, useRef, useEffect } from "react";
 import { authorInfo } from "../data";
 
 export default function Hero() {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoError, setVideoError] = useState(false);
+  const videoRef = useRef(null);
+
   const handleScroll = (e, href) => {
     e.preventDefault();
     const targetId = href.replace("#", "");
@@ -8,230 +13,142 @@ export default function Hero() {
     if (element) element.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.addEventListener("loadeddata", () => setVideoLoaded(true));
+      video.addEventListener("error", () => setVideoError(true));
+      // Try to play
+      video.play().catch(() => setVideoError(true));
+    }
+    return () => {
+      if (video) {
+        video.removeEventListener("loadeddata", () => setVideoLoaded(true));
+        video.removeEventListener("error", () => setVideoError(true));
+      }
+    };
+  }, []);
+
+  const showVideo = videoLoaded && !videoError;
+
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center bg-gradient-to-b from-[#87CEEB] via-[#B0DDF5] to-[#CFEFF5] relative overflow-hidden"
+      className="min-h-screen flex items-center relative overflow-hidden"
     >
-      {/* ===== CLEARER, MORE VISIBLE CLOUDS ===== */}
-
-      {/* Large cloud top right - very visible */}
-      <div className="absolute top-12 right-8 animate-gentle-float">
-        <div className="relative">
-          <div className="w-52 h-20 bg-white rounded-full shadow-[0_4px_20px_rgba(255,255,255,0.6)]"></div>
-          <div className="w-40 h-16 bg-white rounded-full absolute -top-5 left-8 shadow-[0_4px_15px_rgba(255,255,255,0.5)]"></div>
-          <div className="w-32 h-14 bg-white rounded-full absolute -top-3 left-22 shadow-[0_4px_15px_rgba(255,255,255,0.5)]"></div>
-          <div className="w-24 h-12 bg-white rounded-full absolute top-1 left-36"></div>
-        </div>
-      </div>
-
-      {/* Big cloud mid left */}
-      <div
-        className="absolute top-28 left-6 animate-gentle-float"
-        style={{ animationDelay: "1.5s" }}
-      >
-        <div className="relative">
-          <div className="w-44 h-16 bg-white rounded-full shadow-[0_4px_18px_rgba(255,255,255,0.6)]"></div>
-          <div className="w-32 h-13 bg-white rounded-full absolute -top-5 left-6 shadow-[0_4px_15px_rgba(255,255,255,0.5)]"></div>
-          <div className="w-26 h-11 bg-white rounded-full absolute -top-3 left-18"></div>
-          <div className="w-20 h-9 bg-white rounded-full absolute top-1 left-30"></div>
-        </div>
-      </div>
-
-      {/* Long cloud center right */}
-      <div
-        className="absolute top-48 right-20 animate-gentle-float"
-        style={{ animationDelay: "3s" }}
-      >
-        <div className="relative">
-          <div className="w-60 h-20 bg-white rounded-full shadow-[0_4px_20px_rgba(255,255,255,0.6)]"></div>
-          <div className="w-44 h-16 bg-white rounded-full absolute -top-6 left-10 shadow-[0_4px_15px_rgba(255,255,255,0.5)]"></div>
-          <div className="w-34 h-13 bg-white rounded-full absolute -top-4 left-24 shadow-[0_4px_15px_rgba(255,255,255,0.5)]"></div>
-          <div className="w-24 h-10 bg-white rounded-full absolute top-2 left-44"></div>
-          <div className="w-18 h-8 bg-white rounded-full absolute -top-1 left-48"></div>
-        </div>
-      </div>
-
-      {/* Medium cloud top center */}
-      <div
-        className="absolute top-6 left-1/3 animate-gentle-float"
-        style={{ animationDelay: "4.5s" }}
-      >
-        <div className="relative">
-          <div className="w-36 h-13 bg-white rounded-full shadow-[0_4px_15px_rgba(255,255,255,0.5)]"></div>
-          <div className="w-26 h-10 bg-white rounded-full absolute -top-4 left-5 shadow-[0_4px_12px_rgba(255,255,255,0.4)]"></div>
-          <div className="w-20 h-8 bg-white rounded-full absolute -top-2 left-18"></div>
-        </div>
-      </div>
-
-      {/* Cloud bottom left */}
-      <div
-        className="absolute bottom-28 left-12 animate-gentle-float"
-        style={{ animationDelay: "2s" }}
-      >
-        <div className="relative">
-          <div className="w-48 h-17 bg-white rounded-full shadow-[0_4px_18px_rgba(255,255,255,0.5)]"></div>
-          <div className="w-34 h-13 bg-white rounded-full absolute -top-5 left-8 shadow-[0_4px_15px_rgba(255,255,255,0.4)]"></div>
-          <div className="w-26 h-10 bg-white rounded-full absolute -top-3 left-22"></div>
-        </div>
-      </div>
-
-      {/* Cloud far right */}
-      <div
-        className="absolute bottom-40 right-4 animate-gentle-float"
-        style={{ animationDelay: "5s" }}
-      >
-        <div className="relative">
-          <div className="w-38 h-14 bg-white rounded-full shadow-[0_4px_15px_rgba(255,255,255,0.5)]"></div>
-          <div className="w-28 h-11 bg-white rounded-full absolute -top-4 left-5 shadow-[0_4px_12px_rgba(255,255,255,0.4)]"></div>
-          <div className="w-20 h-8 bg-white rounded-full absolute -top-1 left-18"></div>
-        </div>
-      </div>
-
-      {/* Small cloud middle */}
-      <div
-        className="absolute top-36 left-2/5 animate-gentle-float"
-        style={{ animationDelay: "3.5s" }}
-      >
-        <div className="relative">
-          <div className="w-28 h-10 bg-white rounded-full shadow-[0_3px_12px_rgba(255,255,255,0.4)]"></div>
-          <div className="w-20 h-7 bg-white rounded-full absolute -top-3 left-4"></div>
-          <div className="w-16 h-6 bg-white rounded-full absolute -top-1 left-14"></div>
-        </div>
-      </div>
-
-      {/* Wispy high cloud */}
-      <div
-        className="absolute top-20 right-1/3 animate-gentle-float"
-        style={{ animationDelay: "6s" }}
-      >
-        <div className="relative">
-          <div className="w-22 h-7 bg-white rounded-full shadow-[0_3px_10px_rgba(255,255,255,0.3)]"></div>
-          <div className="w-16 h-5 bg-white rounded-full absolute -top-2 left-3"></div>
-        </div>
-      </div>
-
-      {/* Extra cloud bottom center */}
-      <div
-        className="absolute bottom-20 left-1/3 animate-gentle-float"
-        style={{ animationDelay: "1s" }}
-      >
-        <div className="relative">
-          <div className="w-32 h-11 bg-white rounded-full shadow-[0_3px_12px_rgba(255,255,255,0.4)]"></div>
-          <div className="w-22 h-8 bg-white rounded-full absolute -top-3 left-5"></div>
-        </div>
-      </div>
-
-      {/* Extra cloud top far left */}
-      <div
-        className="absolute top-52 left-0 animate-gentle-float"
-        style={{ animationDelay: "4s" }}
-      >
-        <div className="relative">
-          <div className="w-30 h-10 bg-white rounded-full shadow-[0_3px_12px_rgba(255,255,255,0.4)]"></div>
-          <div className="w-20 h-7 bg-white rounded-full absolute -top-3 left-5"></div>
-        </div>
-      </div>
-
-      {/* ===== BIRDS ===== */}
-      <div
-        className="absolute top-20 left-1/4 opacity-30 animate-gentle-float"
-        style={{ animationDelay: "1s" }}
-      >
-        <svg
-          className="w-10 h-5"
-          viewBox="0 0 40 20"
-          fill="none"
-          stroke="#1E4D8F"
-          strokeWidth="1.5"
-        >
-          <path d="M5 15 Q15 5 25 15" strokeLinecap="round" />
-          <path d="M15 15 Q25 5 35 15" strokeLinecap="round" />
-        </svg>
-      </div>
-      <div
-        className="absolute top-32 left-2/5 opacity-22 animate-gentle-float"
-        style={{ animationDelay: "2.5s" }}
-      >
-        <svg
-          className="w-7 h-4"
-          viewBox="0 0 30 15"
-          fill="none"
-          stroke="#1E4D8F"
-          strokeWidth="1.5"
-        >
-          <path d="M3 11 Q12 3 21 11" strokeLinecap="round" />
-          <path d="M11 11 Q20 3 29 11" strokeLinecap="round" />
-        </svg>
-      </div>
-      <div
-        className="absolute top-16 right-1/3 opacity-20 animate-gentle-float"
-        style={{ animationDelay: "4s" }}
-      >
-        <svg
-          className="w-8 h-4"
-          viewBox="0 0 35 15"
-          fill="none"
-          stroke="#1E4D8F"
-          strokeWidth="1.5"
-        >
-          <path d="M4 12 Q14 4 24 12" strokeLinecap="round" />
-          <path d="M13 12 Q22 4 31 12" strokeLinecap="round" />
-        </svg>
-      </div>
-      <div
-        className="absolute top-40 right-1/4 opacity-18 animate-gentle-float"
-        style={{ animationDelay: "5.5s" }}
-      >
-        <svg
-          className="w-6 h-3"
-          viewBox="0 0 25 12"
-          fill="none"
-          stroke="#1E4D8F"
-          strokeWidth="1.5"
-        >
-          <path d="M3 9 Q10 3 17 9" strokeLinecap="round" />
-          <path d="M10 9 Q16 3 23 9" strokeLinecap="round" />
-        </svg>
-      </div>
-
-      {/* ===== LIGHT PARTICLES ===== */}
-      {[...Array(15)].map((_, i) => (
+      {/* ===== VIDEO BACKGROUND ===== */}
+      {!videoError && (
         <div
-          key={`particle-${i}`}
-          className="absolute rounded-full"
-          style={{
-            width: `${1 + Math.random() * 2}px`,
-            height: `${1 + Math.random() * 2}px`,
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            backgroundColor: Math.random() > 0.5 ? "#FFD700" : "#FFFFFF",
-            opacity: 0,
-            animation: `floatUp ${5 + Math.random() * 8}s ease-in-out infinite`,
-            animationDelay: `${Math.random() * 6}s`,
-            boxShadow:
-              Math.random() > 0.5
-                ? "0 0 4px rgba(255,215,0,0.3)"
-                : "0 0 3px rgba(255,255,255,0.3)",
-          }}
-        ></div>
-      ))}
-
-      {/* Subtle sparkles */}
-      {[...Array(8)].map((_, i) => (
-        <div
-          key={`sparkle-${i}`}
-          className="absolute"
-          style={{
-            top: `${10 + Math.random() * 80}%`,
-            left: `${10 + Math.random() * 80}%`,
-            animation: `sparkle ${1.5 + Math.random() * 3}s ease-in-out infinite`,
-            animationDelay: `${Math.random() * 4}s`,
-          }}
+          className={`absolute inset-0 z-0 transition-opacity duration-1000 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
         >
-          <div className="w-1 h-1 bg-[#FFD700] rounded-full shadow-[0_0_3px_#FFD700]"></div>
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/images/video-bg.mp4" type="video/mp4" />
+          </video>
+          {/* Subtle overlay to keep text readable */}
+          <div className="absolute inset-0 bg-white/20"></div>
         </div>
-      ))}
+      )}
+
+      {/* ===== FALLBACK: Original Sky Design ===== */}
+      <div
+        className={`absolute inset-0 z-0 transition-opacity duration-1000 ${showVideo ? "opacity-0" : "opacity-100"}`}
+      >
+        {/* Sky gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#87CEEB] via-[#B0DDF5] to-[#CFEFF5]"></div>
+
+        {/* Clouds */}
+        <div className="absolute top-12 right-8 animate-gentle-float">
+          <div className="relative">
+            <div className="w-52 h-20 bg-white rounded-full shadow-[0_4px_20px_rgba(255,255,255,0.6)]"></div>
+            <div className="w-40 h-16 bg-white rounded-full absolute -top-5 left-8 shadow-[0_4px_15px_rgba(255,255,255,0.5)]"></div>
+            <div className="w-32 h-14 bg-white rounded-full absolute -top-3 left-22 shadow-[0_4px_15px_rgba(255,255,255,0.5)]"></div>
+            <div className="w-24 h-12 bg-white rounded-full absolute top-1 left-36"></div>
+          </div>
+        </div>
+
+        <div
+          className="absolute top-28 left-6 animate-gentle-float"
+          style={{ animationDelay: "1.5s" }}
+        >
+          <div className="relative">
+            <div className="w-44 h-16 bg-white rounded-full shadow-[0_4px_18px_rgba(255,255,255,0.6)]"></div>
+            <div className="w-32 h-13 bg-white rounded-full absolute -top-5 left-6 shadow-[0_4px_15px_rgba(255,255,255,0.5)]"></div>
+            <div className="w-26 h-11 bg-white rounded-full absolute -top-3 left-18"></div>
+            <div className="w-20 h-9 bg-white rounded-full absolute top-1 left-30"></div>
+          </div>
+        </div>
+
+        <div
+          className="absolute top-48 right-20 animate-gentle-float"
+          style={{ animationDelay: "3s" }}
+        >
+          <div className="relative">
+            <div className="w-60 h-20 bg-white rounded-full shadow-[0_4px_20px_rgba(255,255,255,0.6)]"></div>
+            <div className="w-44 h-16 bg-white rounded-full absolute -top-6 left-10 shadow-[0_4px_15px_rgba(255,255,255,0.5)]"></div>
+            <div className="w-34 h-13 bg-white rounded-full absolute -top-4 left-24 shadow-[0_4px_15px_rgba(255,255,255,0.5)]"></div>
+            <div className="w-24 h-10 bg-white rounded-full absolute top-2 left-44"></div>
+          </div>
+        </div>
+
+        <div
+          className="absolute top-6 left-1/3 animate-gentle-float"
+          style={{ animationDelay: "4.5s" }}
+        >
+          <div className="relative">
+            <div className="w-36 h-13 bg-white rounded-full shadow-[0_4px_15px_rgba(255,255,255,0.5)]"></div>
+            <div className="w-26 h-10 bg-white rounded-full absolute -top-4 left-5 shadow-[0_4px_12px_rgba(255,255,255,0.4)]"></div>
+          </div>
+        </div>
+
+        <div
+          className="absolute bottom-28 left-12 animate-gentle-float"
+          style={{ animationDelay: "2s" }}
+        >
+          <div className="relative">
+            <div className="w-48 h-17 bg-white rounded-full shadow-[0_4px_18px_rgba(255,255,255,0.5)]"></div>
+            <div className="w-34 h-13 bg-white rounded-full absolute -top-5 left-8 shadow-[0_4px_15px_rgba(255,255,255,0.4)]"></div>
+          </div>
+        </div>
+
+        {/* Birds */}
+        <div
+          className="absolute top-20 left-1/4 opacity-30 animate-gentle-float"
+          style={{ animationDelay: "1s" }}
+        >
+          <svg
+            className="w-10 h-5"
+            viewBox="0 0 40 20"
+            fill="none"
+            stroke="#1E4D8F"
+            strokeWidth="1.5"
+          >
+            <path d="M5 15 Q15 5 25 15" strokeLinecap="round" />
+            <path d="M15 15 Q25 5 35 15" strokeLinecap="round" />
+          </svg>
+        </div>
+        <div
+          className="absolute top-32 left-2/5 opacity-22 animate-gentle-float"
+          style={{ animationDelay: "2.5s" }}
+        >
+          <svg
+            className="w-7 h-4"
+            viewBox="0 0 30 15"
+            fill="none"
+            stroke="#1E4D8F"
+            strokeWidth="1.5"
+          >
+            <path d="M3 11 Q12 3 21 11" strokeLinecap="round" />
+            <path d="M11 11 Q20 3 29 11" strokeLinecap="round" />
+          </svg>
+        </div>
+      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 md:py-32 w-full">
@@ -288,7 +205,6 @@ export default function Hero() {
           <div className="relative mx-auto max-w-sm animate-fade-up">
             <div className="relative">
               <div className="absolute -inset-6 bg-[#FFD700]/5 rounded-full blur-2xl animate-soft-glow"></div>
-
               <div className="relative bg-white/70 backdrop-blur-sm shadow-2xl border border-white/50 overflow-hidden hover-lift rounded-2xl">
                 <div className="aspect-[3/4] overflow-hidden relative">
                   <img
@@ -317,15 +233,6 @@ export default function Hero() {
                 </div>
               </div>
             </div>
-
-            <div
-              className="absolute top-2 -right-2 w-1.5 h-1.5 bg-[#FFD700] rounded-full animate-gentle-float shadow-[0_0_6px_#FFD700]"
-              style={{ animationDelay: "0.5s" }}
-            ></div>
-            <div
-              className="absolute bottom-8 -left-2 w-1 h-1 bg-[#FFD700] rounded-full animate-gentle-float shadow-[0_0_4px_#FFD700]"
-              style={{ animationDelay: "1.5s" }}
-            ></div>
           </div>
         </div>
       </div>
