@@ -2,21 +2,29 @@ export const authorInfo = {
   name: "Eric Chifunda",
   firstName: "Eric",
   email: "eric.chifunda@yahoo.com",
-  phone: "(917) 628-3767",
-  bio: "Eric Chifunda is a New York-based occupational therapist who works as an independent contractor. His first book (An Endless Quest for Spiritual Truth) won the Pinnacle Book Achievement Award in the 'Spiritual' category. His second book (Selected Inspirational Quotes) also won the Pinnacle Book Achievement Award for the category 'Inspirational.'",
-  bio2: "Eric is also an artist who studied art at the National Academy School of Fine Arts in New York City. He is also an actor who does acting occasionally. His most recent book, 'Potent Quotes for Soul,' is filled with uplifting quotes. The quotes that resonate with you can help bring a fresher perspective on life, inspire, open your heart to more love, instill hope, and help gradually elevate you to a higher version of yourself.",
-  bio3: "What we read and internalize can shape our attitude to some extent. Thus, the more uplifting the words, the more one may experience improvement in thought processes, feelings, and perspective. Henceforth, life gets transformed for the better.",
+  phone: "(347) 319-5228",
+
+  // NEW Combined Bios
+  bio: "Eric Chifunda is a New York–based artist who studied Art at the National Academy School of Fine Arts in New York City. His work ranges from representational, to visionary, to abstract forms. He continually strives to create art that is uplifting. Additionally, he is an Author who has written 4 books. His early experience in writing involved penning 4 stage plays, which he also produced and directed. He also dabbled in poetry, for which he received the International Library of Poetry's Editor's Choice Award.",
+
+  bio2: "In recent years, he has written 4 books in which he takes a deep dive into love, higher truth, spiritual freedom, the expansion of consciousness, and God. A deeper understanding of these can help us grow spiritually. Thus, make our lives easier to navigate, experience more joy and more love in this challenging world.",
+
+  bio3: "Chifunda is also an actor known for independent films such as Slave Warrior, Spade, This America, and Cultures (written and directed by Oliver Mbamara). Apart from his involvement in independent films, he has also had film industry experience involving major studio productions such as The Amazing Spider-Man, The Interpreter, Center Stage, and Che.",
+
+  bio4: "In addition to being in the arts, he is an Occupational Therapist who works as an independent contractor, licensed in New Jersey and New York. At one point, he was a co-owner of an outpatient clinic and also owned his own staffing agency for over a decade.",
+
   roles: ["Author", "Artist", "Actor", "Occupational Therapist"],
+
   achievements: [
-    "Pinnacle Book Achievement Award - Spiritual Category",
-    "Pinnacle Book Achievement Award - Inspirational Category",
+    "Distinguished Favorites Independent Press Award — The Quest for God's Love",
+    "Pinnacle Book Achievement Award — Selected Inspirational Quotes",
+    "International Library of Poetry Editor's Choice Award",
   ],
 };
-
 export const book = [
   {
     id: 1,
-    title: "An Endless Quest for Spiritual Truth",
+    title: "The Quest for God's Love",
     subtitle: "A Practical Guide to Everyday Spirituality",
     description:
       "Would you like a fresh perspective on life that can inspire you to live a more loving, joyful, and fulfilling life? This book is replete with articles on how one can gain deeper understanding of love in its higher form and spiritual truth that's an integral part of our daily life.",
@@ -25,7 +33,7 @@ export const book = [
     coverImage: "/images/endless.jpg",
     status: "published",
     statusText: "Available Now",
-    award: "Pinnacle Book Achievement Award",
+    award: "Distinguished Favorites Independent Press Award",
     themes: [
       "Spirituality",
       "Self-Discovery",
@@ -44,7 +52,7 @@ export const book = [
     title: "Selected Inspirational Quotes",
     subtitle: "Wisdom for Everyday Life",
     description:
-      "This book contains selected quotes from the book An Endless Quest for Spiritual Truth that may help one gain deeper spiritual insight into day-to-day life. One way to get the most out of this book is to randomly open one of the pages and see what is there for you.",
+      "This book contains selected quotes from the book The Quest for God's Love that may help one gain deeper spiritual insight into day-to-day life. One way to get the most out of this book is to randomly open one of the pages and see what is there for you.",
     description2:
       "How does that relate to a question you might have? Does it contain pearls of wisdom you may need to help you get through the day? Maybe words of inspiration to jump-start your day? Right words to open your heart? Encouraging words to lift your spirits and infuse in you a new sense of hope?",
     coverImage: "/images/inspirational.jpg",
@@ -62,25 +70,6 @@ export const book = [
   {
     id: 3,
     title: "Potent Quotes For Soul",
-    subtitle: "Uplifting Quotes For A Fresher Perspective",
-    description:
-      "To get the most out of this book, open randomly any page, see what is there for you. If it resonates, contemplate on that quote for your own in-depth understanding and meaning.",
-    description2:
-      "While in the human state, few seemingly give attention to themselves as Soul. Perhaps this may be a result of merely surviving in this challenging world. The human focus is often fixated outwardly. As a result, we have forgotten to look within for our true identity as Soul.",
-    coverImage: "/images/potent.jpg",
-    status: "published",
-    statusText: "Available Now",
-    themes: ["Soul", "Awakening", "Inner Peace", "Transformation"],
-    purchaseLinks: [
-      {
-        name: "Amazon",
-        url: "https://www.amazon.com/Potent-Quotes-Soul-Uplifting-Modern-ebook/dp/B08F2XVMHD?ref_=ast_author_dp_rw&th=1&psc=1&dib=eyJ2IjoiMSJ9.jZoael8VqIrrPbIglQ0IZmzlSs1y5EETK8encJTRdVo6_eN0Zg-g60k7J9SuM5l0.-TUe4ydKeBrob6Ygw26beYSCcTDSbV9QEsxjrzEcL-0&dib_tag=AUTHOR",
-      },
-    ],
-  },
-  {
-    id: 4,
-    title: "Potent Quotes For Soul",
     subtitle: "Uplifting Quotes For A Fresher Perspective - 2nd Edition",
     description:
       "To get the most out of this book, open randomly any page, see what is there for you. If it resonates, contemplate on that quote for your own in-depth understanding and meaning.",
@@ -97,6 +86,25 @@ export const book = [
       },
     ],
   },
+  {
+    id: 4,
+    title: "What About Love?",
+    subtitle: "Quotes to Deepen Your Understanding of Love",
+    description:
+      "In life, we are often caught up in daily challenges that can cause us to lose our inner peace. Undue stress can undermine our well-being and rob us of the joy of living. Hence, it's helpful to stop, relax, reflect, or read an uplifting quote that can help shift our mindset from a negative to a positive one, which can start to infuse our hearts with love.",
+    description2:
+      "With love, we can walk this earth with a little more joy, hope, and confidence. We owe it to ourselves to refill our hearts with love, making our lives a little more joyful and meaningful. This book contains uplifting quotes that can help open hearts to awaken one to love, an essential ingredient in making our lives a little more forgiving and joyful.",
+    coverImage: "/images/what-about-love.jpg",
+    status: "published",
+    statusText: "Available Now",
+    themes: ["Love", "Joy", "Healing", "Inspiration"],
+    purchaseLinks: [
+      {
+        name: "Amazon",
+        url: "https://www.amazon.com/What-About-Love-Quotes-Understanding/dp/1966473087/ref=sr_1_1?crid=1WTJ7VRZO7OA6&dib=eyJ2IjoiMSJ9.ZnBlxNLsI65Xs22i8AVJpw.OOxR04NwDryUmm-pj87vP18bq9YVZxRMKk_1eqwvy4w&dib_tag=se&keywords=what+about+love+by+Eric+Chifunda&qid=1783612284&s=digital-text&sprefix=what+about+love+by+eric+chifunda%2Cdigital-text%2C372&sr=1-1",
+      },
+    ],
+  },
 ];
 
 export const navLinks = [
@@ -109,7 +117,9 @@ export const navLinks = [
 
 export const contactInfo = {
   email: "eric.chifunda@yahoo.com",
-  phone: "(917) 628-3767",
+  phone: "(347) 319-5228",
+  imdb: "https://www.imdb.com/name/nm0000000/", // Replace with real IMDB link
+  instagram: "https://www.instagram.com/EricChifunda",
 };
 
 export const reviews = [
