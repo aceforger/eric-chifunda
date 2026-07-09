@@ -30,7 +30,7 @@ export default function About() {
             <div className="bg-gradient-to-br from-[#F8F4EA] to-[#CFEFF5]/30 rounded-2xl overflow-hidden border border-[#CFEFF5]/30 shadow-lg animate-fade-up">
               <div className="aspect-[3/4] overflow-hidden">
                 <img
-                  src="/images/profile2.png"
+                  src="/images/profile4.png"
                   alt={authorInfo.name}
                   className="w-full h-full object-cover"
                   onError={(e) => {

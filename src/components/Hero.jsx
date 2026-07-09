@@ -13,69 +13,133 @@ export default function Hero() {
       id="home"
       className="min-h-screen flex items-center bg-gradient-to-b from-[#87CEEB] via-[#B0DDF5] to-[#CFEFF5] relative overflow-hidden"
     >
-      {/* Sun in top left corner */}
-      <div className="absolute -top-32 -left-32 w-[500px] h-[500px]">
-        {/* Sun outer glow */}
-        <div className="absolute inset-0 bg-[#D4AF37]/10 rounded-full blur-[60px] animate-soft-glow"></div>
-        <div
-          className="absolute inset-8 bg-[#D4AF37]/15 rounded-full blur-[40px] animate-soft-glow"
-          style={{ animationDelay: "0.5s" }}
-        ></div>
+      {/* ===== CLEARER, MORE VISIBLE CLOUDS ===== */}
 
-        {/* Sun core */}
-        <div className="absolute inset-16 bg-gradient-to-br from-[#FFD700] via-[#FDB813] to-[#D4AF37] rounded-full blur-[2px] shadow-[0_0_80px_rgba(255,215,0,0.4),0_0_160px_rgba(255,215,0,0.2),0_0_240px_rgba(255,193,7,0.1)]"></div>
-
-        {/* Sun rays */}
-        {[...Array(12)].map((_, i) => (
-          <div
-            key={`ray-${i}`}
-            className="absolute top-1/2 left-1/2"
-            style={{
-              width: "2px",
-              height: "180px",
-              background:
-                "linear-gradient(to bottom, rgba(255,215,0,0.4), transparent)",
-              transform: `translate(-50%, -50%) rotate(${i * 30}deg)`,
-              transformOrigin: "bottom center",
-              animation: `sunRay ${3 + i * 0.2}s ease-in-out infinite`,
-              animationDelay: `${i * 0.3}s`,
-            }}
-          ></div>
-        ))}
-      </div>
-
-      {/* Clouds */}
-      <div className="absolute top-20 right-10 opacity-30">
+      {/* Large cloud top right - very visible */}
+      <div className="absolute top-12 right-8 animate-gentle-float">
         <div className="relative">
-          <div className="w-32 h-12 bg-white rounded-full blur-sm"></div>
-          <div className="w-24 h-10 bg-white rounded-full blur-sm absolute -top-4 left-4"></div>
-          <div className="w-20 h-8 bg-white rounded-full blur-sm absolute -top-2 left-12"></div>
+          <div className="w-52 h-20 bg-white rounded-full shadow-[0_4px_20px_rgba(255,255,255,0.6)]"></div>
+          <div className="w-40 h-16 bg-white rounded-full absolute -top-5 left-8 shadow-[0_4px_15px_rgba(255,255,255,0.5)]"></div>
+          <div className="w-32 h-14 bg-white rounded-full absolute -top-3 left-22 shadow-[0_4px_15px_rgba(255,255,255,0.5)]"></div>
+          <div className="w-24 h-12 bg-white rounded-full absolute top-1 left-36"></div>
         </div>
       </div>
-      <div className="absolute top-40 right-40 opacity-20 animate-gentle-float">
-        <div className="relative">
-          <div className="w-40 h-14 bg-white rounded-full blur-sm"></div>
-          <div className="w-28 h-12 bg-white rounded-full blur-sm absolute -top-5 left-6"></div>
-          <div className="w-24 h-10 bg-white rounded-full blur-sm absolute -top-3 left-16"></div>
-        </div>
-      </div>
+
+      {/* Big cloud mid left */}
       <div
-        className="absolute top-60 right-20 opacity-15 animate-gentle-float"
+        className="absolute top-28 left-6 animate-gentle-float"
+        style={{ animationDelay: "1.5s" }}
+      >
+        <div className="relative">
+          <div className="w-44 h-16 bg-white rounded-full shadow-[0_4px_18px_rgba(255,255,255,0.6)]"></div>
+          <div className="w-32 h-13 bg-white rounded-full absolute -top-5 left-6 shadow-[0_4px_15px_rgba(255,255,255,0.5)]"></div>
+          <div className="w-26 h-11 bg-white rounded-full absolute -top-3 left-18"></div>
+          <div className="w-20 h-9 bg-white rounded-full absolute top-1 left-30"></div>
+        </div>
+      </div>
+
+      {/* Long cloud center right */}
+      <div
+        className="absolute top-48 right-20 animate-gentle-float"
         style={{ animationDelay: "3s" }}
       >
         <div className="relative">
-          <div className="w-28 h-10 bg-white rounded-full blur-sm"></div>
-          <div className="w-20 h-8 bg-white rounded-full blur-sm absolute -top-3 left-4"></div>
+          <div className="w-60 h-20 bg-white rounded-full shadow-[0_4px_20px_rgba(255,255,255,0.6)]"></div>
+          <div className="w-44 h-16 bg-white rounded-full absolute -top-6 left-10 shadow-[0_4px_15px_rgba(255,255,255,0.5)]"></div>
+          <div className="w-34 h-13 bg-white rounded-full absolute -top-4 left-24 shadow-[0_4px_15px_rgba(255,255,255,0.5)]"></div>
+          <div className="w-24 h-10 bg-white rounded-full absolute top-2 left-44"></div>
+          <div className="w-18 h-8 bg-white rounded-full absolute -top-1 left-48"></div>
         </div>
       </div>
 
-      {/* Birds */}
+      {/* Medium cloud top center */}
       <div
-        className="absolute top-32 left-1/3 opacity-20 animate-gentle-float"
+        className="absolute top-6 left-1/3 animate-gentle-float"
+        style={{ animationDelay: "4.5s" }}
+      >
+        <div className="relative">
+          <div className="w-36 h-13 bg-white rounded-full shadow-[0_4px_15px_rgba(255,255,255,0.5)]"></div>
+          <div className="w-26 h-10 bg-white rounded-full absolute -top-4 left-5 shadow-[0_4px_12px_rgba(255,255,255,0.4)]"></div>
+          <div className="w-20 h-8 bg-white rounded-full absolute -top-2 left-18"></div>
+        </div>
+      </div>
+
+      {/* Cloud bottom left */}
+      <div
+        className="absolute bottom-28 left-12 animate-gentle-float"
+        style={{ animationDelay: "2s" }}
+      >
+        <div className="relative">
+          <div className="w-48 h-17 bg-white rounded-full shadow-[0_4px_18px_rgba(255,255,255,0.5)]"></div>
+          <div className="w-34 h-13 bg-white rounded-full absolute -top-5 left-8 shadow-[0_4px_15px_rgba(255,255,255,0.4)]"></div>
+          <div className="w-26 h-10 bg-white rounded-full absolute -top-3 left-22"></div>
+        </div>
+      </div>
+
+      {/* Cloud far right */}
+      <div
+        className="absolute bottom-40 right-4 animate-gentle-float"
+        style={{ animationDelay: "5s" }}
+      >
+        <div className="relative">
+          <div className="w-38 h-14 bg-white rounded-full shadow-[0_4px_15px_rgba(255,255,255,0.5)]"></div>
+          <div className="w-28 h-11 bg-white rounded-full absolute -top-4 left-5 shadow-[0_4px_12px_rgba(255,255,255,0.4)]"></div>
+          <div className="w-20 h-8 bg-white rounded-full absolute -top-1 left-18"></div>
+        </div>
+      </div>
+
+      {/* Small cloud middle */}
+      <div
+        className="absolute top-36 left-2/5 animate-gentle-float"
+        style={{ animationDelay: "3.5s" }}
+      >
+        <div className="relative">
+          <div className="w-28 h-10 bg-white rounded-full shadow-[0_3px_12px_rgba(255,255,255,0.4)]"></div>
+          <div className="w-20 h-7 bg-white rounded-full absolute -top-3 left-4"></div>
+          <div className="w-16 h-6 bg-white rounded-full absolute -top-1 left-14"></div>
+        </div>
+      </div>
+
+      {/* Wispy high cloud */}
+      <div
+        className="absolute top-20 right-1/3 animate-gentle-float"
+        style={{ animationDelay: "6s" }}
+      >
+        <div className="relative">
+          <div className="w-22 h-7 bg-white rounded-full shadow-[0_3px_10px_rgba(255,255,255,0.3)]"></div>
+          <div className="w-16 h-5 bg-white rounded-full absolute -top-2 left-3"></div>
+        </div>
+      </div>
+
+      {/* Extra cloud bottom center */}
+      <div
+        className="absolute bottom-20 left-1/3 animate-gentle-float"
+        style={{ animationDelay: "1s" }}
+      >
+        <div className="relative">
+          <div className="w-32 h-11 bg-white rounded-full shadow-[0_3px_12px_rgba(255,255,255,0.4)]"></div>
+          <div className="w-22 h-8 bg-white rounded-full absolute -top-3 left-5"></div>
+        </div>
+      </div>
+
+      {/* Extra cloud top far left */}
+      <div
+        className="absolute top-52 left-0 animate-gentle-float"
+        style={{ animationDelay: "4s" }}
+      >
+        <div className="relative">
+          <div className="w-30 h-10 bg-white rounded-full shadow-[0_3px_12px_rgba(255,255,255,0.4)]"></div>
+          <div className="w-20 h-7 bg-white rounded-full absolute -top-3 left-5"></div>
+        </div>
+      </div>
+
+      {/* ===== BIRDS ===== */}
+      <div
+        className="absolute top-20 left-1/4 opacity-30 animate-gentle-float"
         style={{ animationDelay: "1s" }}
       >
         <svg
-          className="w-8 h-4"
+          className="w-10 h-5"
           viewBox="0 0 40 20"
           fill="none"
           stroke="#1E4D8F"
@@ -86,11 +150,11 @@ export default function Hero() {
         </svg>
       </div>
       <div
-        className="absolute top-44 left-1/2 opacity-15 animate-gentle-float"
+        className="absolute top-32 left-2/5 opacity-22 animate-gentle-float"
         style={{ animationDelay: "2.5s" }}
       >
         <svg
-          className="w-6 h-3"
+          className="w-7 h-4"
           viewBox="0 0 30 15"
           fill="none"
           stroke="#1E4D8F"
@@ -100,15 +164,45 @@ export default function Hero() {
           <path d="M11 11 Q20 3 29 11" strokeLinecap="round" />
         </svg>
       </div>
+      <div
+        className="absolute top-16 right-1/3 opacity-20 animate-gentle-float"
+        style={{ animationDelay: "4s" }}
+      >
+        <svg
+          className="w-8 h-4"
+          viewBox="0 0 35 15"
+          fill="none"
+          stroke="#1E4D8F"
+          strokeWidth="1.5"
+        >
+          <path d="M4 12 Q14 4 24 12" strokeLinecap="round" />
+          <path d="M13 12 Q22 4 31 12" strokeLinecap="round" />
+        </svg>
+      </div>
+      <div
+        className="absolute top-40 right-1/4 opacity-18 animate-gentle-float"
+        style={{ animationDelay: "5.5s" }}
+      >
+        <svg
+          className="w-6 h-3"
+          viewBox="0 0 25 12"
+          fill="none"
+          stroke="#1E4D8F"
+          strokeWidth="1.5"
+        >
+          <path d="M3 9 Q10 3 17 9" strokeLinecap="round" />
+          <path d="M10 9 Q16 3 23 9" strokeLinecap="round" />
+        </svg>
+      </div>
 
-      {/* Light particles floating */}
-      {[...Array(20)].map((_, i) => (
+      {/* ===== LIGHT PARTICLES ===== */}
+      {[...Array(15)].map((_, i) => (
         <div
           key={`particle-${i}`}
           className="absolute rounded-full"
           style={{
-            width: `${1 + Math.random() * 3}px`,
-            height: `${1 + Math.random() * 3}px`,
+            width: `${1 + Math.random() * 2}px`,
+            height: `${1 + Math.random() * 2}px`,
             top: `${Math.random() * 100}%`,
             left: `${Math.random() * 100}%`,
             backgroundColor: Math.random() > 0.5 ? "#FFD700" : "#FFFFFF",
@@ -117,14 +211,14 @@ export default function Hero() {
             animationDelay: `${Math.random() * 6}s`,
             boxShadow:
               Math.random() > 0.5
-                ? "0 0 6px rgba(255,215,0,0.4)"
-                : "0 0 4px rgba(255,255,255,0.4)",
+                ? "0 0 4px rgba(255,215,0,0.3)"
+                : "0 0 3px rgba(255,255,255,0.3)",
           }}
         ></div>
       ))}
 
       {/* Subtle sparkles */}
-      {[...Array(10)].map((_, i) => (
+      {[...Array(8)].map((_, i) => (
         <div
           key={`sparkle-${i}`}
           className="absolute"
@@ -135,12 +229,14 @@ export default function Hero() {
             animationDelay: `${Math.random() * 4}s`,
           }}
         >
-          <div className="w-1 h-1 bg-[#FFD700] rounded-full shadow-[0_0_4px_#FFD700,0_0_8px_#FFD700]"></div>
+          <div className="w-1 h-1 bg-[#FFD700] rounded-full shadow-[0_0_3px_#FFD700]"></div>
         </div>
       ))}
 
+      {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 md:py-32 w-full">
         <div className="grid md:grid-cols-2 gap-16 items-center">
+          {/* LEFT - Text */}
           <div className="text-center md:text-left">
             <div className="inline-flex items-center gap-2 border border-[#D4AF37]/40 text-[#1E4D8F] px-4 py-2 mb-8 text-sm font-montserrat font-semibold rounded-full bg-white/40 backdrop-blur-sm animate-fade-up">
               <span className="w-2 h-2 bg-[#D4AF37] rounded-full animate-soft-glow"></span>
@@ -188,15 +284,15 @@ export default function Hero() {
             </div>
           </div>
 
+          {/* RIGHT - Profile */}
           <div className="relative mx-auto max-w-sm animate-fade-up">
             <div className="relative">
-              {/* Sun glow around profile */}
               <div className="absolute -inset-6 bg-[#FFD700]/5 rounded-full blur-2xl animate-soft-glow"></div>
 
               <div className="relative bg-white/70 backdrop-blur-sm shadow-2xl border border-white/50 overflow-hidden hover-lift rounded-2xl">
                 <div className="aspect-[3/4] overflow-hidden relative">
                   <img
-                    src="/images/profile.png"
+                    src="/images/profile3.png"
                     alt={authorInfo.name}
                     className="w-full h-full object-cover relative z-10"
                     onError={(e) => {
@@ -217,13 +313,11 @@ export default function Hero() {
                       `;
                     }}
                   />
-                  {/* Warm light overlay */}
                   <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-[#FFD700]/10 to-transparent z-20 pointer-events-none"></div>
                 </div>
               </div>
             </div>
 
-            {/* Floating sparkles around image */}
             <div
               className="absolute top-2 -right-2 w-1.5 h-1.5 bg-[#FFD700] rounded-full animate-gentle-float shadow-[0_0_6px_#FFD700]"
               style={{ animationDelay: "0.5s" }}
