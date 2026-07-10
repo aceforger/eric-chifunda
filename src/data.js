@@ -7,7 +7,7 @@ export const authorInfo = {
   // NEW Combined Bios
   bio: "Eric Chifunda is a New York–based artist who studied Art at the National Academy School of Fine Arts in New York City. His work ranges from representational, to visionary, to abstract forms. He continually strives to create art that is uplifting. Additionally, he is an Author who has written 4 books. His early experience in writing involved penning 4 stage plays, which he also produced and directed. He also dabbled in poetry, for which he received the International Library of Poetry's Editor's Choice Award.",
 
-  bio2: "In recent years, he has written 4 books in which he takes a deep dive into love, higher truth, spiritual freedom, the expansion of consciousness, and God. A deeper understanding of these can help us grow spiritually. Thus, make our lives easier to navigate, experience more joy and more love in this challenging world.",
+  bio2: "He is also an author in recent years, he has written 4 books in which he takes a deep dive into love, higher truth, spiritual freedom, the expansion of consciousness, and God. A deeper understanding of these can help us grow spiritually. Thus, make our lives easier to navigate, experience more joy and more love in this challenging world.",
 
   bio3: "Chifunda is also an actor known for independent films such as Slave Warrior, Spade, This America, and Cultures (written and directed by Oliver Mbamara). Apart from his involvement in independent films, he has also had film industry experience involving major studio productions such as The Amazing Spider-Man, The Interpreter, Center Stage, and Che.",
 

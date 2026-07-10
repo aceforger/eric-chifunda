@@ -19,7 +19,10 @@ export default function About() {
           <h2 className="text-4xl md:text-5xl font-playfair text-[#1E4D8F] mb-4">
             {authorInfo.name}
           </h2>
-          <div className="w-20 h-[3px] bg-gradient-to-r from-[#D4AF37] to-[#63B8E6] mx-auto mt-6 rounded-full"></div>
+          <div className="w-20 h-[3px] bg-gradient-to-r from-[#D4AF37] to-[#63B8E6] mx-auto rounded-full"></div>
+          <h3 className="text-2xl md:text-3xl font-playfair font-bold text-[#1E4D8F] mt-6">
+            ABOUT THE AUTHOR
+          </h3>
         </div>
 
         {/* Two Column Layout */}
@@ -115,7 +118,7 @@ export default function About() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-playfair font-bold text-[#1E4D8F] uppercase tracking-wider">
-                  About the Author
+                  ART
                 </h3>
               </div>
               <p className="text-[#1E3A6F] font-medium leading-relaxed font-inter text-base">
@@ -136,7 +139,7 @@ export default function About() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-playfair font-bold text-[#1E4D8F] uppercase tracking-wider">
-                  Writing & Art
+                  Writing
                 </h3>
               </div>
               <p className="text-[#1E3A6F] font-medium leading-relaxed font-inter text-base">
