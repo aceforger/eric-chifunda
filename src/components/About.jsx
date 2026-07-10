@@ -20,9 +20,6 @@ export default function About() {
             {authorInfo.name}
           </h2>
           <div className="w-20 h-[3px] bg-gradient-to-r from-[#D4AF37] to-[#63B8E6] mx-auto rounded-full"></div>
-          <h3 className="text-2xl md:text-3xl font-playfair font-bold text-[#1E4D8F] mt-6">
-            ABOUT THE AUTHOR
-          </h3>
         </div>
 
         {/* Two Column Layout */}
@@ -101,6 +98,13 @@ export default function About() {
 
           {/* Right Column - Combined Bio */}
           <div className="md:col-span-3 space-y-6">
+            {/* ABOUT THE AUTHOR - Left aligned with cards */}
+            <div className="animate-fade-up">
+              <h3 className="text-2xl md:text-3xl font-playfair font-bold text-[#1E4D8F]">
+                ABOUT THE AUTHOR
+              </h3>
+            </div>
+
             {/* Bio Card 1 - Main */}
             <div className="bg-[#F8F4EA]/50 backdrop-blur-sm p-8 rounded-2xl border border-[#CFEFF5]/30 animate-fade-up hover-lift">
               <div className="flex items-center gap-3 mb-4">
