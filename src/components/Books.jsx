@@ -71,7 +71,7 @@ export default function Books() {
                   <h3 className="text-sm font-playfair font-bold text-[#1E4D8F] mb-1.5 group-hover:text-[#D4AF37] transition-colors line-clamp-2">
                     {bookItem.title}
                   </h3>
-                  <p className="text-[#1E4D8F]/40 text-xs font-inter leading-relaxed mb-3 flex-1 line-clamp-3">
+                  <p className="text-[#1E4D8F]/70 text-xs font-inter leading-relaxed mb-3 flex-1 line-clamp-3">
                     {bookItem.description}
                   </p>
                   <div className="flex flex-wrap gap-1 mb-3">
@@ -167,11 +167,11 @@ export default function Books() {
                     </h2>
                     <div className="w-16 h-[3px] bg-gradient-to-r from-[#D4AF37] to-[#63B8E6] mt-4 rounded-full"></div>
                   </div>
-                  <p className="text-[#1E4D8F]/70 leading-relaxed font-inter">
+                  <p className="text-[#1E4D8F] font-medium leading-relaxed font-inter">
                     {selectedBook.description}
                   </p>
                   {selectedBook.description2 && (
-                    <p className="text-[#1E4D8F]/50 leading-relaxed font-inter text-sm">
+                    <p className="text-[#1E4D8F] leading-relaxed font-inter text-sm">
                       {selectedBook.description2}
                     </p>
                   )}
