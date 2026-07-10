@@ -114,11 +114,11 @@ export default function About() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-sm font-montserrat font-semibold text-[#C8870A] uppercase tracking-wider">
+                <h3 className="text-lg font-playfair font-bold text-[#1E4D8F] uppercase tracking-wider">
                   About the Author
                 </h3>
               </div>
-              <p className="text-[#1E4D8F]/70 leading-relaxed font-inter">
+              <p className="text-[#1E3A6F] font-medium leading-relaxed font-inter text-base">
                 {authorInfo.bio}
               </p>
             </div>
@@ -135,11 +135,11 @@ export default function About() {
                     <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
                   </svg>
                 </div>
-                <h3 className="text-sm font-montserrat font-semibold text-[#63B8E6] uppercase tracking-wider">
+                <h3 className="text-lg font-playfair font-bold text-[#1E4D8F] uppercase tracking-wider">
                   Writing & Art
                 </h3>
               </div>
-              <p className="text-[#1E4D8F]/60 leading-relaxed font-inter">
+              <p className="text-[#1E3A6F] font-medium leading-relaxed font-inter text-base">
                 {authorInfo.bio2}
               </p>
             </div>
@@ -156,11 +156,11 @@ export default function About() {
                     <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                   </svg>
                 </div>
-                <h3 className="text-sm font-montserrat font-semibold text-[#D4AF37] uppercase tracking-wider">
+                <h3 className="text-lg font-playfair font-bold text-[#1E4D8F] uppercase tracking-wider">
                   Acting Career
                 </h3>
               </div>
-              <p className="text-[#1E4D8F]/60 leading-relaxed font-inter">
+              <p className="text-[#1E3A6F] font-medium leading-relaxed font-inter text-base">
                 {authorInfo.bio3}
               </p>
             </div>
@@ -182,11 +182,11 @@ export default function About() {
                     <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z" />
                   </svg>
                 </div>
-                <h3 className="text-sm font-montserrat font-semibold text-[#C8870A] uppercase tracking-wider">
+                <h3 className="text-lg font-playfair font-bold text-[#1E4D8F] uppercase tracking-wider">
                   Professional Career
                 </h3>
               </div>
-              <p className="text-[#1E4D8F]/60 leading-relaxed font-inter">
+              <p className="text-[#1E3A6F] font-medium leading-relaxed font-inter text-base">
                 {authorInfo.bio4}
               </p>
             </div>
