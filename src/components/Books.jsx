@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { book } from "../data";
+import { book, authorInfo } from "../data";
 
 export default function Books() {
   const [selectedBook, setSelectedBook] = useState(null);
@@ -10,6 +10,7 @@ export default function Books() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#CFEFF5]/15 rounded-full blur-[120px] animate-ripple"></div>
       </div>
       <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Section Header */}
         <div className="text-center mb-16 animate-fade-up">
           <div className="inline-flex items-center gap-2 border border-[#D4AF37]/30 text-[#D4AF37] px-4 py-2 mb-4 text-sm font-montserrat font-semibold rounded-full">
             <span className="w-2 h-2 bg-[#D4AF37] rounded-full animate-soft-glow"></span>
@@ -21,6 +22,7 @@ export default function Books() {
           <div className="w-20 h-[3px] bg-gradient-to-r from-[#D4AF37] to-[#63B8E6] mx-auto mt-6 rounded-full"></div>
         </div>
 
+        {/* Book Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-9 max-w-7xl mx-auto">
           {book.map((bookItem, i) => (
             <div
@@ -64,14 +66,14 @@ export default function Books() {
                 </div>
                 <div className="p-4 flex-1 flex flex-col">
                   {bookItem.subtitle && (
-                    <p className="text-[#63B8E6] text-[10px] font-montserrat font-semibold uppercase tracking-wider mb-1.5">
+                    <p className="text-[#069ff1] text-[10px] font-montserrat font-semibold uppercase tracking-wider mb-1.5">
                       {bookItem.subtitle}
                     </p>
                   )}
                   <h3 className="text-sm font-playfair font-bold text-[#1E4D8F] mb-1.5 group-hover:text-[#D4AF37] transition-colors line-clamp-2">
                     {bookItem.title}
                   </h3>
-                  <p className="text-[#1E4D8F]/70 text-xs font-inter leading-relaxed mb-3 flex-1 line-clamp-3">
+                  <p className="text-[#0a3477] text-xs font-inter leading-relaxed mb-3 flex-1 line-clamp-3">
                     {bookItem.description}
                   </p>
                   <div className="flex flex-wrap gap-1 mb-3">
@@ -95,8 +97,46 @@ export default function Books() {
             </div>
           ))}
         </div>
+
+        {/* ===== ACHIEVEMENTS SECTION ===== */}
+        <div className="max-w-3xl mx-auto mt-16 animate-fade-up-delayed">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="w-8 h-[2px] bg-gradient-to-r from-transparent to-[#D4AF37]/40"></div>
+            <h3 className="text-lg font-montserrat font-semibold text-[#C8870A] uppercase tracking-wider">
+              Awards & Recognition
+            </h3>
+            <div className="w-8 h-[2px] bg-gradient-to-l from-transparent to-[#63B8E6]/40"></div>
+          </div>
+
+          <div className="space-y-3">
+            {authorInfo.achievements.map((achievement, i) => (
+              <div
+                key={i}
+                className="bg-gradient-to-r from-[#D4AF37]/5 to-[#CFEFF5]/10 p-4 rounded-xl border border-[#D4AF37]/10 hover-lift flex items-center gap-3 bg-white/60 backdrop-blur-sm"
+              >
+                <div className="w-10 h-10 bg-[#D4AF37] rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg
+                    className="w-5 h-5 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <p className="text-[#1E4D8F] text-sm font-montserrat font-semibold leading-snug">
+                  {achievement}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
+      {/* Modal */}
       {selectedBook && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1E4D8F]/20 backdrop-blur-sm"

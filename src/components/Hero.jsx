@@ -208,7 +208,7 @@ export default function Hero() {
               <div className="relative bg-white/70 backdrop-blur-sm shadow-2xl border border-white/50 overflow-hidden hover-lift rounded-2xl">
                 <div className="aspect-[3/4] overflow-hidden relative">
                   <img
-                    src="/images/profile3.png"
+                    src="/images/profile6.png"
                     alt={authorInfo.name}
                     className="w-full h-full object-cover relative z-10"
                     onError={(e) => {
