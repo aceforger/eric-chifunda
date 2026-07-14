@@ -118,7 +118,7 @@ export const navLinks = [
 export const contactInfo = {
   email: "eric.chifunda@yahoo.com",
   phone: "(347) 319-5228",
-  imdb: "https://www.imdb.com/name/nm0000000/", // Replace with real IMDB link
+  imdb: "https://www.imdb.com/name/nm3556294/", // Replace with real IMDB link
   instagram: "https://www.instagram.com/EricChifunda",
 };
 
