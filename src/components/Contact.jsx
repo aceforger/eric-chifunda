@@ -84,12 +84,12 @@ export default function Contact() {
               href={contactInfo.imdb}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E4D8F] text-white font-montserrat font-semibold text-sm rounded-full hover:bg-[#153A6B] transition-all hover-lift"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#D4AF37] text-black font-montserrat font-bold text-xl rounded-full hover:bg-[#153A6B] transition-all hover-lift"
             >
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              {/* <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z" />
-              </svg>
-              IMDB
+              </svg> */}
+              IMDb
             </a>
             <a
               href={contactInfo.instagram}
