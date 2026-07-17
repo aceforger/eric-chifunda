@@ -110,6 +110,7 @@ export const book = [
 export const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
+  { name: "Paintings", href: "#paintings" },
   { name: "Books", href: "#books" },
   { name: "Reviews", href: "#reviews" },
   { name: "Contact", href: "#contact" },
