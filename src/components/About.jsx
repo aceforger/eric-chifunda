@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { authorInfo } from "../data";
 
 export default function About() {
@@ -24,9 +25,9 @@ export default function About() {
 
         {/* Two Column Layout */}
         <div className="grid md:grid-cols-5 gap-10 max-w-6xl mx-auto">
-          {/* Left Column - Profile Image & Roles */}
+          {/* Left Column - Profile Images, Roles & Paintings */}
           <div className="md:col-span-2 space-y-5">
-            {/* Profile Image */}
+            {/* Profile Image 1 */}
             <div className="bg-gradient-to-br from-[#F8F4EA] to-[#CFEFF5]/30 rounded-2xl overflow-hidden border border-[#CFEFF5]/30 shadow-lg animate-fade-up">
               <div className="aspect-[3/4] overflow-hidden">
                 <img
@@ -68,8 +69,8 @@ export default function About() {
               </div>
             </div>
 
-            {/* Profile Image */}
-            <div className="space-y-3 animate-fade-up-delayed-2">
+            {/* Profile Image 2 */}
+            <div className="animate-fade-up-delayed-2">
               <div className="bg-gradient-to-br from-[#F8F4EA] to-[#CFEFF5]/30 rounded-2xl overflow-hidden border border-[#CFEFF5]/30 shadow-lg">
                 <div className="aspect-[3/4] overflow-hidden">
                   <img
@@ -85,11 +86,11 @@ export default function About() {
                         "min-h-[200px]",
                       );
                       e.target.parentElement.innerHTML = `
-            <div class="text-center p-8">
-              <div class="text-4xl font-playfair font-bold text-[#1E4D8F] mb-2">EC</div>
-              <p class="text-sm font-montserrat font-medium text-[#63B8E6]">${authorInfo.name}</p>
-            </div>
-          `;
+                        <div class="text-center p-8">
+                          <div class="text-4xl font-playfair font-bold text-[#1E4D8F] mb-2">EC</div>
+                          <p class="text-sm font-montserrat font-medium text-[#63B8E6]">${authorInfo.name}</p>
+                        </div>
+                      `;
                     }}
                   />
                 </div>
@@ -99,14 +100,13 @@ export default function About() {
 
           {/* Right Column - Combined Bio */}
           <div className="md:col-span-3 space-y-6">
-            {/* ABOUT THE AUTHOR - Left aligned with cards */}
             <div className="animate-fade-up">
               <h3 className="text-2xl md:text-3xl font-playfair font-bold text-[#1E4D8F]">
                 ABOUT THE AUTHOR
               </h3>
             </div>
 
-            {/* Bio Card 1 - Main */}
+            {/* Bio Card 1 - ART */}
             <div className="bg-[#F8F4EA]/50 backdrop-blur-sm p-8 rounded-2xl border border-[#CFEFF5]/30 animate-fade-up hover-lift">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-8 bg-[#D4AF37]/10 rounded-full flex items-center justify-center">
@@ -131,7 +131,7 @@ export default function About() {
               </p>
             </div>
 
-            {/* Bio Card 2 - Writing & Art */}
+            {/* Bio Card 2 - Writing */}
             <div className="bg-[#F8F4EA]/50 backdrop-blur-sm p-8 rounded-2xl border-l-3 border-[#D4AF37] animate-fade-up-delayed hover-lift">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-8 bg-[#63B8E6]/10 rounded-full flex items-center justify-center">
@@ -197,6 +197,290 @@ export default function About() {
               <p className="text-[#1E3A6F] font-medium leading-relaxed font-inter text-base">
                 {authorInfo.bio4}
               </p>
+            </div>
+
+            {/* ===== FEATURED PAINTINGS ===== */}
+            <div className="animate-fade-up-delayed-2">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-4 h-[2px] bg-[#D4AF37]/50"></div>
+                <h3 className="text-xl font-montserrat font-semibold text-[#C8870A] uppercase tracking-wider">
+                  Featured Paintings
+                </h3>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                {/* Row 1 */}
+                <div className="rounded-lg overflow-hidden border border-[#CFEFF5]/30 shadow-sm hover:shadow-md hover:border-[#D4AF37]/30 transition-all hover-lift bg-gradient-to-br from-[#F8F4EA] to-[#CFEFF5]/20">
+                  <motion.img
+                    src="/images/painting1.jpg"
+                    alt="Painting by Eric Chifunda"
+                    className="w-full aspect-square object-cover"
+                    animate={{
+                      rotateY: [0, 360, 360, 360, 360],
+                      scale: [1, 1, 1, 1.03, 1, 1.03, 1],
+                    }}
+                    transition={{
+                      duration: 5,
+                      times: [0, 0.15, 0.3, 0.5, 0.65, 0.82, 1],
+                      repeat: Infinity,
+                      repeatDelay: 2,
+                      ease: "easeInOut",
+                    }}
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.parentElement.classList.add(
+                        "flex",
+                        "items-center",
+                        "justify-center",
+                        "min-h-[60px]",
+                        "bg-[#F8F4EA]",
+                      );
+                      e.target.parentElement.innerHTML = `<span class="text-lg">🎨</span>`;
+                    }}
+                  />
+                </div>
+                <div className="rounded-lg overflow-hidden border border-[#CFEFF5]/30 shadow-sm hover:shadow-md hover:border-[#D4AF37]/30 transition-all hover-lift bg-gradient-to-br from-[#F8F4EA] to-[#CFEFF5]/20">
+                  <motion.img
+                    src="/images/painting2.jpg"
+                    alt="Painting by Eric Chifunda"
+                    className="w-full aspect-square object-cover"
+                    animate={{
+                      rotateY: [0, 360, 360, 360, 360],
+                      scale: [1, 1, 1, 1.03, 1, 1.03, 1],
+                    }}
+                    transition={{
+                      duration: 5,
+                      times: [0, 0.15, 0.3, 0.5, 0.65, 0.82, 1],
+                      repeat: Infinity,
+                      repeatDelay: 2,
+                      ease: "easeInOut",
+                      delay: 0.3,
+                    }}
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.parentElement.classList.add(
+                        "flex",
+                        "items-center",
+                        "justify-center",
+                        "min-h-[60px]",
+                        "bg-[#F8F4EA]",
+                      );
+                      e.target.parentElement.innerHTML = `<span class="text-lg">🎨</span>`;
+                    }}
+                  />
+                </div>
+                <div className="rounded-lg overflow-hidden border border-[#CFEFF5]/30 shadow-sm hover:shadow-md hover:border-[#D4AF37]/30 transition-all hover-lift bg-gradient-to-br from-[#F8F4EA] to-[#CFEFF5]/20">
+                  <motion.img
+                    src="/images/painting3.jpg"
+                    alt="Painting by Eric Chifunda"
+                    className="w-full aspect-square object-cover"
+                    animate={{
+                      rotateY: [0, 360, 360, 360, 360],
+                      scale: [1, 1, 1, 1.03, 1, 1.03, 1],
+                    }}
+                    transition={{
+                      duration: 5,
+                      times: [0, 0.15, 0.3, 0.5, 0.65, 0.82, 1],
+                      repeat: Infinity,
+                      repeatDelay: 2,
+                      ease: "easeInOut",
+                      delay: 0.6,
+                    }}
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.parentElement.classList.add(
+                        "flex",
+                        "items-center",
+                        "justify-center",
+                        "min-h-[60px]",
+                        "bg-[#F8F4EA]",
+                      );
+                      e.target.parentElement.innerHTML = `<span class="text-lg">🎨</span>`;
+                    }}
+                  />
+                </div>
+                {/* Row 2 */}
+                <div className="rounded-lg overflow-hidden border border-[#CFEFF5]/30 shadow-sm hover:shadow-md hover:border-[#D4AF37]/30 transition-all hover-lift bg-gradient-to-br from-[#F8F4EA] to-[#CFEFF5]/20">
+                  <motion.img
+                    src="/images/painting4.jpg"
+                    alt="Painting by Eric Chifunda"
+                    className="w-full aspect-square object-cover"
+                    animate={{
+                      rotateY: [0, 360, 360, 360, 360],
+                      scale: [1, 1, 1, 1.03, 1, 1.03, 1],
+                    }}
+                    transition={{
+                      duration: 5,
+                      times: [0, 0.15, 0.3, 0.5, 0.65, 0.82, 1],
+                      repeat: Infinity,
+                      repeatDelay: 2,
+                      ease: "easeInOut",
+                      delay: 0.9,
+                    }}
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.parentElement.classList.add(
+                        "flex",
+                        "items-center",
+                        "justify-center",
+                        "min-h-[60px]",
+                        "bg-[#F8F4EA]",
+                      );
+                      e.target.parentElement.innerHTML = `<span class="text-lg">🎨</span>`;
+                    }}
+                  />
+                </div>
+                <div className="rounded-lg overflow-hidden border border-[#CFEFF5]/30 shadow-sm hover:shadow-md hover:border-[#D4AF37]/30 transition-all hover-lift bg-gradient-to-br from-[#F8F4EA] to-[#CFEFF5]/20">
+                  <motion.img
+                    src="/images/painting5.jpg"
+                    alt="Painting by Eric Chifunda"
+                    className="w-full aspect-square object-cover"
+                    animate={{
+                      rotateY: [0, 360, 360, 360, 360],
+                      scale: [1, 1, 1, 1.03, 1, 1.03, 1],
+                    }}
+                    transition={{
+                      duration: 5,
+                      times: [0, 0.15, 0.3, 0.5, 0.65, 0.82, 1],
+                      repeat: Infinity,
+                      repeatDelay: 2,
+                      ease: "easeInOut",
+                      delay: 1.2,
+                    }}
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.parentElement.classList.add(
+                        "flex",
+                        "items-center",
+                        "justify-center",
+                        "min-h-[60px]",
+                        "bg-[#F8F4EA]",
+                      );
+                      e.target.parentElement.innerHTML = `<span class="text-lg">🎨</span>`;
+                    }}
+                  />
+                </div>
+                <div className="rounded-lg overflow-hidden border border-[#CFEFF5]/30 shadow-sm hover:shadow-md hover:border-[#D4AF37]/30 transition-all hover-lift bg-gradient-to-br from-[#F8F4EA] to-[#CFEFF5]/20">
+                  <motion.img
+                    src="/images/painting6.jpg"
+                    alt="Painting by Eric Chifunda"
+                    className="w-full aspect-square object-cover"
+                    animate={{
+                      rotateY: [0, 360, 360, 360, 360],
+                      scale: [1, 1, 1, 1.03, 1, 1.03, 1],
+                    }}
+                    transition={{
+                      duration: 5,
+                      times: [0, 0.15, 0.3, 0.5, 0.65, 0.82, 1],
+                      repeat: Infinity,
+                      repeatDelay: 2,
+                      ease: "easeInOut",
+                      delay: 1.5,
+                    }}
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.parentElement.classList.add(
+                        "flex",
+                        "items-center",
+                        "justify-center",
+                        "min-h-[60px]",
+                        "bg-[#F8F4EA]",
+                      );
+                      e.target.parentElement.innerHTML = `<span class="text-lg">🎨</span>`;
+                    }}
+                  />
+                </div>
+                {/* Row 3 */}
+                <div className="rounded-lg overflow-hidden border border-[#CFEFF5]/30 shadow-sm hover:shadow-md hover:border-[#D4AF37]/30 transition-all hover-lift bg-gradient-to-br from-[#F8F4EA] to-[#CFEFF5]/20">
+                  <motion.img
+                    src="/images/painting7.jpg"
+                    alt="Painting by Eric Chifunda"
+                    className="w-full aspect-square object-cover"
+                    animate={{
+                      rotateY: [0, 360, 360, 360, 360],
+                      scale: [1, 1, 1, 1.03, 1, 1.03, 1],
+                    }}
+                    transition={{
+                      duration: 5,
+                      times: [0, 0.15, 0.3, 0.5, 0.65, 0.82, 1],
+                      repeat: Infinity,
+                      repeatDelay: 2,
+                      ease: "easeInOut",
+                      delay: 1.8,
+                    }}
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.parentElement.classList.add(
+                        "flex",
+                        "items-center",
+                        "justify-center",
+                        "min-h-[60px]",
+                        "bg-[#F8F4EA]",
+                      );
+                      e.target.parentElement.innerHTML = `<span class="text-lg">🎨</span>`;
+                    }}
+                  />
+                </div>
+                <div className="rounded-lg overflow-hidden border border-[#CFEFF5]/30 shadow-sm hover:shadow-md hover:border-[#D4AF37]/30 transition-all hover-lift bg-gradient-to-br from-[#F8F4EA] to-[#CFEFF5]/20">
+                  <motion.img
+                    src="/images/painting8.jpg"
+                    alt="Painting by Eric Chifunda"
+                    className="w-full aspect-square object-cover"
+                    animate={{
+                      rotateY: [0, 360, 360, 360, 360],
+                      scale: [1, 1, 1, 1.03, 1, 1.03, 1],
+                    }}
+                    transition={{
+                      duration: 5,
+                      times: [0, 0.15, 0.3, 0.5, 0.65, 0.82, 1],
+                      repeat: Infinity,
+                      repeatDelay: 2,
+                      ease: "easeInOut",
+                      delay: 2.1,
+                    }}
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.parentElement.classList.add(
+                        "flex",
+                        "items-center",
+                        "justify-center",
+                        "min-h-[60px]",
+                        "bg-[#F8F4EA]",
+                      );
+                      e.target.parentElement.innerHTML = `<span class="text-lg">🎨</span>`;
+                    }}
+                  />
+                </div>
+                <div className="rounded-lg overflow-hidden border border-[#CFEFF5]/30 shadow-sm hover:shadow-md hover:border-[#D4AF37]/30 transition-all hover-lift bg-gradient-to-br from-[#F8F4EA] to-[#CFEFF5]/20">
+                  <motion.img
+                    src="/images/painting9.jpg"
+                    alt="Painting by Eric Chifunda"
+                    className="w-full aspect-square object-cover"
+                    animate={{
+                      rotateY: [0, 360, 360, 360, 360],
+                      scale: [1, 1, 1, 1.03, 1, 1.03, 1],
+                    }}
+                    transition={{
+                      duration: 5,
+                      times: [0, 0.15, 0.3, 0.5, 0.65, 0.82, 1],
+                      repeat: Infinity,
+                      repeatDelay: 2,
+                      ease: "easeInOut",
+                      delay: 2.4,
+                    }}
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.parentElement.classList.add(
+                        "flex",
+                        "items-center",
+                        "justify-center",
+                        "min-h-[60px]",
+                        "bg-[#F8F4EA]",
+                      );
+                      e.target.parentElement.innerHTML = `<span class="text-lg">🎨</span>`;
+                    }}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
